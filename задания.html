@@ -2,16 +2,17 @@
 <html lang="en"> <!--корневой тег док-а-->
 <head> <!--техн. инфа о сайте-->
     <meta charset="UTF-8"> <!--кодировка символов док-а-->
-    <title>начало  работы</title> <!--название сайта-->
+    <title>начало работы</title> <!--название сайта-->
+    <link rel="stylesheet" href="color.css">
 </head>
 <body> <!--основная часть док-а-->
-    <h1>Первая работа</h1> <!--заголовок 1 lvl-->
-    <h2 id="soderzhanie">Содержание</h2id> <!--заголовок 2 lvl-->
+<h1>Первая работа</h1> <!--заголовок 1 lvl-->
+<h2 id="soderzhanie">Содержание</h2id> <!--заголовок 2 lvl-->
     <ol> <!--нумерованный список-->
         <li>Параграфы и текст</li> <!--пункт списка-->
         <li>Блочные и строчные элементы</li> <!--пункт списка-->
         <li>Таблицы</li> <!--пункт списка-->
-        <li>Формы</li> <!--пункт списка-->   
+        <li>Формы</li> <!--пункт списка-->
     </ol>
 
     <h3>Параграфы и текст</h3> <!--заголовок 3 lvl-->
@@ -20,21 +21,22 @@
     <p>Также текст можно выделять <i>курсивом</i> <b>жирным</b> <s>перечёркиванием</s> <u>подчёркивание</u></p>
 
     <h3>Блочые и строчные элементы</h3>
-    <div>В блочныйй элемент div помещают <div>другие элементы или текст</div>
-    <spand>Тег spand - строчный элемент. Занимает место в зависимости от наполнения. </spand>
-    <spand>Этот тектс по\вится рядом</spand>
+    <div>В блочныйй элемент div помещают
+        <div>другие элементы или текст</div>
+        <spand>Тег spand - строчный элемент. Занимает место в зависимости от наполнения.</spand>
+        <spand>Этот тектс по\вится рядом</spand>
 
-    <h3>Таблицы</h3>
-    <table border="1"> <!--таблица-->
-        <thead> <!--верхний ряд табл-->
+        <h3>Таблицы</h3>
+        <table border="1"> <!--таблица-->
+            <thead> <!--верхний ряд табл-->
             <tr> <!--строка в табл-->
                 <th>Место</th> <!--1 столбец-->
                 <th>Оценка</th> <!--2 столбец-->
                 <th>Название</th> <!--3 солбец-->
                 <th>Год выхода</th> <!--4 столбец-->
-            </tr> 
-        </thead>
-        <tbody> <!--тело таблиц-->
+            </tr>
+            </thead>
+            <tbody> <!--тело таблиц-->
             <tr>
                 <td>1</td> <!--ячейка в табл-->
                 <td>9.7</td>
@@ -48,44 +50,44 @@
                 <td>2019</td>
             </tr>
 
-        </tbody>
-    </table>
+            </tbody>
+        </table>
 
-    <h3>Изображения</h3>
-    <div>
-        <img src="https://photobooth.cdn.sports.ru/preset/post/4/2a/c6b9c05a7465d9144f0d3875f7d99.jpeg" width="700">
-    <div>
-        <img src="https://i.pinimg.com/564x/48/f4/9d/48f49d5199e320500dd10c2dc5458977.jpg" width="500">
-    </div>
-
-<h3>Формы</h3>
-    <form> <!--Форма ввода-->
+        <h3>Изображения</h3>
         <div>
-
-        <label for="username">Имя:</label>
-        <input id="username"placeholder="Введите ваше имя"> <!--Поле для вводаданных-->
-        </div>
-        <br> <!--Пустое поле-->
-        <div>
-        <label for="userpost">Почта:</label>
-        <input id="userpost" placeholder="Введитевашу почту">
-        </div>
-        <br>
-        <div>
-        <input id="agree" type="checkbox">
-        <label for="agree">Я соглашаюсь с правилами данного сервиса</label>
-        </div>
-        <button>Отправить</button>
-    </form>
-        <h3>Ссылки</h3>
+            <img src="https://photobooth.cdn.sports.ru/preset/post/4/2a/c6b9c05a7465d9144f0d3875f7d99.jpeg" width="700">
             <div>
-        <a href="https://google.com" target="_blank">Ссылка на гугл</a>
+                <img src="https://i.pinimg.com/564x/48/f4/9d/48f49d5199e320500dd10c2dc5458977.jpg" width="500">
+            </div>
+
+            <h3>Формы</h3>
+            <form> <!--Форма ввода-->
+                <div>
+
+                    <label for="username">Имя:</label>
+                    <input id="username" placeholder="Введите ваше имя"> <!--Поле для вводаданных-->
+                </div>
+                <br> <!--Пустое поле-->
+                <div>
+                    <label for="userpost">Почта:</label>
+                    <input id="userpost" placeholder="Введитевашу почту">
+                </div>
+                <br>
+                <div>
+                    <input id="agree" type="checkbox">
+                    <label for="agree">Я соглашаюсь с правилами данного сервиса</label>
+                </div>
+                <button>Отправить</button>
+            </form>
+            <h3>Ссылки</h3>
+            <div>
+                <a href="https://google.com" target="_blank">Ссылка на гугл</a>
             </div>
             <div>
-        <a href="index2.html" target="_blank">Ссылка на вторую страницу</a>
-            <div>
-        <a href="#soderzhanie">Ссылка на содержание</anref>
-            </div>
+                <a href="index2.html" target="_blank">Ссылка на вторую страницу</a>
+                <div>
+                    <a href="#soderzhanie">Ссылка на содержание</anref>
+                </div>
 
 </body>
 </html>
