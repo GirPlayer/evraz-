@@ -1,0 +1,50 @@
+body {
+    position: relative;
+    height: 2000px;
+    padding-top: 80px;
+}
+
+.box{
+    /*display: block;*/ /* блочный*/
+    /*display: inline-block;*/ /* линия + блок*/
+    /*display: inline;*/ /* линия*/
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background : blue;
+    /*color: #ffffff*/ /*HEX-формат*/
+    color: rgb(255, 255, 255); /*RGD формат*/
+}
+
+#third {
+    /*position: static;*/ /*позиция статична*/
+    /*position: relative; !*тносительная позиция*!*/
+    position: absolute; /*Абсолютное позицианирование*/
+    top: 50%; /*отступ сверху*/
+    left: 50%; /*отступ слева*/
+    /*right: 20px;*/ /*отступ справа*/
+    /*bottom: 20px;*/ /*отступ снизу*/
+    background: orange;
+}
+
+#second_child{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+    background: green;
+}
+
+.fixed{
+    position: fixed; /*позиция относительно окна*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: darkblue;
+    padding: 50px;
+    color: white;
+    margin-top: 0px;
+}
