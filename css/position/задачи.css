@@ -1,21 +1,22 @@
 .box1{
     width: 100%;
-    height: 20px;
+    height: 50px;
     background: darkblue;
     color: white;
 }
 
 .box2{
     width: 100%;
-    height: 20px;
+    height: 50px;
     background: darkblue;
     margin-top: 10px;
     color: white;
+
 }
 
 .box3{
     width: 100%;
-    height: 20px;
+    height: 50px;
     background: darkblue;
     margin-top: 15px;
     color: white;
