@@ -1,0 +1,55 @@
+.block1{
+    height: 30px;
+    width: 100%;
+    background-color: orange;
+    text-align: center;
+}
+
+.block2 {
+    height: 40px;
+    width: 100%;
+    background-color: orange;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.block2 h4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100%;
+}
+
+ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    height: 100%;
+}
+
+li {
+    margin-right: 300px;
+}
+
+table {
+
+}
+
+.bee {
+    width: 500px;
+    height: 400px;
+}
+
+.main-block {
+    display: flex;
+}
+
+.left-block {
+    width: 50%;
+}
+
+.right-block {
+    width: 50%;
+}
