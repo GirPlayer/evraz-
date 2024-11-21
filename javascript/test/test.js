@@ -1,0 +1,29 @@
+alert('Привет! Мне надо собрать чуть-чуть данных о тебе)')
+let n = prompt('Напиши свое имя:')
+let f = prompt('Напиши свою фамилию:')
+let o = prompt('Напиши свое отчество:')
+let v = prompt('Напиши свой возраст:')
+let sh = prompt('Напиши свою школу:')
+let k = prompt('Напиши свой класс:')
+let s = prompt('Напиши свой любимый вид спорта:')
+let p = prompt('Напиши свой любимый предмет:')
+let c = prompt('Напиши свой любимый цвет:')
+
+let na = document.getElementById('name')
+na.innerText = n
+let fa = document.getElementById('lastname')
+fa.innerText = f
+let ot = document.getElementById('middlename')
+ot.innerText = o
+let vo = document.getElementById('age')
+vo.innerText = v
+let shk = document.getElementById('school')
+shk.innerText = sh
+let kl = document.getElementById('class')
+kl.innerText = k
+let sp = document.getElementById('sport')
+sp.innerText = s
+let pr = document.getElementById('subject')
+pr.innerText = p
+let cv = document.getElementById('color')
+cv.innerText = c
