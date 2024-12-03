@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+<div class="block">
+    <div>
+        <input class="input" id="input">
+    </div>
+    <div>
+        <button onclick="text('7')" id="seven" class="seven">7</button>
+        <button onclick="text('8')" id="eight" class="eight">8</button>
+        <button onclick="text('9')" id="nine" class="nine">9</button>
+        <button onclick="text('+')" id="plus" class="plus">+</button>
+    </div>
+    <div>
+        <button onclick="text('4')" id="four" class="four">4</button>
+        <button onclick="text('5')" id="five" class="five">5</button>
+        <button onclick="text('6')" id="six" class="six">6</button>
+        <button onclick="text('-')" id="minus" class="minus">-</button>
+    </div>
+    <div>
+        <button onclick="text('1')" id="one" class="one">1</button>
+        <button onclick="text('2')" id="two" class="two">2</button>
+        <button onclick="text('3')" id="three" class="three">3</button>
+        <button onclick="text('*')" id="umnozenie" class="umnozenie">*</button>
+    </div>
+    <div>
+        <button onclick="text('0')" id="null" class="null">0</button>
+        <button onclick="text('/')" id="delenie" class="delenie">/</button>
+    </div>
+    <div>
+        <button onclick="delet()" id="delet" class="delet">C</button>
+        <button onclick="compute()" id="ravno" class="ravno">=</button>
+    </div>
+</div>
+
+
+<script src="calculator.js"></script>
+</body>
+</html>
