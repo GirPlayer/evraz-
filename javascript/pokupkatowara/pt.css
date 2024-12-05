@@ -1,0 +1,15 @@
+.pole1{
+    height: 70px;
+    width: 60px;
+    margin-top: 10px;
+    margin-left: 10px;
+    border: 10px solid black;
+}
+
+.pole2{
+    height: 70px;
+    width: 60px;
+    margin-top: 50px;
+    margin-left: 10px;
+    border: 10px solid black;
+}
