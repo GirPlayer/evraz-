@@ -101,11 +101,15 @@
 .b2{
     position: absolute;
     margin-left: 250px;
-    margin-top: 380px;
+    top: 800px;
     height: 40px;
     width: 200px;
     font-size: 20px;
     font-family: 'Calibri Light';
+}
+
+.element{
+    margin-bottom: 12px;
 }
 
 
