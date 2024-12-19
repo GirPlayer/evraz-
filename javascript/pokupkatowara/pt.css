@@ -29,7 +29,17 @@
 
 .b{
     position: absolute;
-    margin-left: -250px;
+    margin-left: -380px;
+    margin-top: 250px;
+    height: 40px;
+    width: 200px;
+    font-size: 20px;
+    font-family: 'Calibri Light';
+}
+
+.b3{
+    position: absolute;
+    margin-left: -150px;
     margin-top: 250px;
     height: 40px;
     width: 200px;
@@ -111,5 +121,6 @@
 .element{
     margin-bottom: 12px;
 }
+
 
 

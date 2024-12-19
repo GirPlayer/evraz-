@@ -10,6 +10,10 @@ let n2 = document.getElementById('n2')
 let n3 = document.getElementById('n3')
 let n4 = document.getElementById('n4')
 let n5 = document.getElementById('n5')
+let b3 = document.getElementById('b3')
+let ctowarov = document.getElementById('ctowarov')
+let ctowarov1 = 0
+
 
 function addTowar(){
     n1.innerText = i1.value
@@ -24,6 +28,8 @@ let towar = document.getElementById('towar');
 function delet(){
     elements.innerText = ""
     elements.value = ""
+    ctowarov.innerHTML = 0
+    ctowarov1 = ctowarov1 - ctowarov1
 }
 b2.addEventListener("click", delet)
 
@@ -55,7 +61,36 @@ function appendElement() {
     opisDiv.innerHTML = `<span>Описание товара: ${opis.value}</span>`;
     mainDiv.append(opisDiv)
 
+    const bd = document.createElement('button')
+    bd.innerHTML = 'Удалить'
+    mainDiv.append(bd);
+
+    function buttond(){
+        mainDiv.innerHTML = ""
+        ctowarov1 = ctowarov1 - 1
+        ctowarov.innerHTML = ctowarov1
+    }
+    bd.addEventListener('click', buttond)
+
+    ctowarov1 = ctowarov1 + 1
+    ctowarov.innerHTML = ctowarov1
+
     elements.append(mainDiv)
 }
-
 b.addEventListener('click', appendElement)
+
+
+function deleteForm(){
+    name.value = ""
+    price.value = ""
+    colvo.value = ""
+    art.value = ""
+    opis.value = ""
+}
+b3.addEventListener('click', deleteForm)
+
+
+
+
+
+
