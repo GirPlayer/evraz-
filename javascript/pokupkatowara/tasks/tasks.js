@@ -3,6 +3,10 @@ let description = document.getElementById('description')
 let button = document.getElementById('button')
 let list = document.getElementById('list')
 let count = 0
+let searchI = document.getElementById('search')
+let bSearch = document.getElementById('bSearch')
+let bReset = document.getElementById('bReset')
+let taskList = ''
 
 
 function addTask(){
@@ -37,8 +41,29 @@ function addTask(){
     task.append(number ,taskTitle, taskDescription, buttonD)
 
     list.append(task)
+    taskList = list.innerHTML
     title.value = ""
     description.value = ""
 }
 
 button.addEventListener('click', addTask)
+
+
+function searchTask(){
+    let tasks = document.getElementsByClassName('task')
+
+    for (let task of tasks){
+        let titles = task.getElementsByClassName('task-title')
+        let title = titles[0]
+
+        if (title.innerText.includes(searchI.value) == false){
+            task.remove()
+        }
+    }
+}
+bSearch.addEventListener('click', searchTask)
+
+function resetTasks(){
+    list.innerHTML = taskList
+}
+bReset.addEventListener('click', resetTasks)

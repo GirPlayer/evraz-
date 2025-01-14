@@ -13,6 +13,10 @@ let n5 = document.getElementById('n5')
 let b3 = document.getElementById('b3')
 let ctowarov = document.getElementById('ctowarov')
 let ctowarov1 = 0
+let searchI = document.getElementById('search')
+let bSearch = document.getElementById('bSearch')
+let bReset = document.getElementById('bReset')
+let taskList = ''
 
 
 function addTowar(){
@@ -43,6 +47,7 @@ function appendElement() {
 
     const nameDiv = document.createElement('div');
     nameDiv.innerHTML = `<span>Название товара: ${name.value}</span>`;
+    nameDiv.classList.add('nameDiv')
     mainDiv.append(nameDiv)
 
     const priceDiv = document.createElement('div');
@@ -76,6 +81,7 @@ function appendElement() {
     ctowarov.innerHTML = ctowarov1
 
     elements.append(mainDiv)
+    taskList = elements.innerHTML
 }
 b.addEventListener('click', appendElement)
 
@@ -89,7 +95,39 @@ function deleteForm(){
 }
 b3.addEventListener('click', deleteForm)
 
+function searchTask(){
+    let tasks = document.getElementsByClassName('task')
 
+    for (let task of tasks){
+        let titles = task.getElementsByClassName('nameDiv')
+        let title = titles[0]
+
+        if (title.innerText.includes(searchI.value) == false){
+            mainDiv.remove()
+        }
+    }
+}
+bSearch.addEventListener('click', searchTask)
+
+// function resetTasks(){
+//     list.innerHTML = taskList
+// }
+// bReset.addEventListener('click', resetTasks)
+
+
+function searchT(){
+    let tasks = document.getElementsByClassName('element')
+
+    for (let task of tasks){
+        let titles = task.getElementsByClassName('nameDiv')
+        let title = titles[0]
+
+        if (title.innerText.includes(searchI.value) == false){
+            mainDiv.remove()
+        }
+    }
+}
+bSearch.addEventListener('click', searchT)
 
 
 

@@ -39,8 +39,8 @@
 
 .b3{
     position: absolute;
-    margin-left: -150px;
-    margin-top: 250px;
+    margin-left: 330px;
+    margin-top: 130px;
     height: 40px;
     width: 200px;
     font-size: 20px;
@@ -122,5 +122,12 @@
     margin-bottom: 12px;
 }
 
+.t8{
+    font-family: 'Calibri Light';
+    margin-left: 50px;
+    font-size: 20px;
+}
 
-
+.searchI{
+    margin-left: 50px;
+}
