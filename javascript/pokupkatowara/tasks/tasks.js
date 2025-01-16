@@ -6,7 +6,7 @@ let count = 0
 let searchI = document.getElementById('search')
 let bSearch = document.getElementById('bSearch')
 let bReset = document.getElementById('bReset')
-let taskList = ''
+
 
 
 function addTask(){
@@ -41,7 +41,6 @@ function addTask(){
     task.append(number ,taskTitle, taskDescription, buttonD)
 
     list.append(task)
-    taskList = list.innerHTML
     title.value = ""
     description.value = ""
 }
@@ -56,14 +55,17 @@ function searchTask(){
         let titles = task.getElementsByClassName('task-title')
         let title = titles[0]
 
-        if (title.innerText.includes(searchI.value) == false){
-            task.remove()
+        if (title.innerText.includes(searchI.value) === false){
+            task.style.display = 'none'
         }
     }
 }
 bSearch.addEventListener('click', searchTask)
 
 function resetTasks(){
-    list.innerHTML = taskList
+    let tasks = document.getElementsByClassName('task')
+    for (let task of tasks){
+        task.style.display = 'block'
+    }
 }
 bReset.addEventListener('click', resetTasks)

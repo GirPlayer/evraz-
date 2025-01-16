@@ -22,14 +22,32 @@
         <input class="i4" id="i4" placeholder="Напишите артикул товара">
         <h4 class="t7">Описание товара</h4>
         <input class="i5" id="i5" placeholder="Напишите описание товара">
-        <button class="b" id="b">Добавить товар</button>
+        <h4 class="t9">Категория</h4>
+        <select class="select" id="select">
+            <option></option>
+            <option>Учёба</option>
+            <option>Спорт</option>
+            <option>Работа</option>
+        </select>
+
         <div class="search-form">
-            <h4 class="t8" for="search">Поиск</h4>
-            <input class="searchI" id="search" placeholder="Введите название задачи">
-            <button id="bSearch">Найти</button>
-            <button id="bReset">Сбросить</button>
+            <label class="t8" for="search"><b>Поиск</b></label>
+            <div>
+                <input class="searchI" id="search" placeholder="Введите название задачи">
+                <button id="bSearch">Найти</button>
+                <button id="bReset">Сбросить</button>
+            </div>
+            <select class="select2" id="select2">
+                <option>Выберите категорию</option>
+                <option>Учёба</option>
+                <option>Спорт</option>
+                <option>Работа</option>
+            </select>
         </div>
-        <button class="b3" id="b3">Очистить форму</button>
+        <div class="buttons">
+            <button class="b" id="b">Добавить товар</button>
+            <button class="b3" id="b3">Очистить форму</button>
+        </div>
     </div>
     <div class="pole2" id="pole2">
         <h2 class="t2">Готовые товары <div class="ctowarov" id="ctowarov">0</div></h2>

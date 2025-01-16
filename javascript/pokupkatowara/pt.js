@@ -1,3 +1,8 @@
+let i1 = document.getElementById('i1')
+let i2 = document.getElementById('i2')
+let i3 = document.getElementById('i3')
+let i4 = document.getElementById('i4')
+let i5 = document.getElementById('i5')
 let b = document.getElementById('b')
 let b2 = document.getElementById('b2')
 let name = document.getElementById('i1')
@@ -5,6 +10,8 @@ let price = document.getElementById('i2')
 let colvo = document.getElementById('i3')
 let art = document.getElementById('i4')
 let opis = document.getElementById('i5')
+let cat = document.getElementById('select')
+let cat2 = document.getElementById('select')
 let n1 = document.getElementById('n1')
 let n2 = document.getElementById('n2')
 let n3 = document.getElementById('n3')
@@ -66,6 +73,11 @@ function appendElement() {
     opisDiv.innerHTML = `<span>Описание товара: ${opis.value}</span>`;
     mainDiv.append(opisDiv)
 
+    const catDiv = document.createElement('div');
+    catDiv.innerHTML = `<span>Категория: ${cat.value}</span>`;
+    catDiv.classList.add('catDiv')
+    mainDiv.append(catDiv)
+
     const bd = document.createElement('button')
     bd.innerHTML = 'Удалить'
     mainDiv.append(bd);
@@ -92,27 +104,13 @@ function deleteForm(){
     colvo.value = ""
     art.value = ""
     opis.value = ""
+    searchI.value = ""
+    cat.value = ""
+    cat2.value = ""
 }
 b3.addEventListener('click', deleteForm)
 
-function searchTask(){
-    let tasks = document.getElementsByClassName('task')
 
-    for (let task of tasks){
-        let titles = task.getElementsByClassName('nameDiv')
-        let title = titles[0]
-
-        if (title.innerText.includes(searchI.value) == false){
-            mainDiv.remove()
-        }
-    }
-}
-bSearch.addEventListener('click', searchTask)
-
-// function resetTasks(){
-//     list.innerHTML = taskList
-// }
-// bReset.addEventListener('click', resetTasks)
 
 
 function searchT(){
@@ -122,13 +120,35 @@ function searchT(){
         let titles = task.getElementsByClassName('nameDiv')
         let title = titles[0]
 
-        if (title.innerText.includes(searchI.value) == false){
-            mainDiv.remove()
+        if (title.innerText.includes(searchI.value) === false){
+            task.style.display = 'none'
         }
     }
 }
 bSearch.addEventListener('click', searchT)
 
+
+function searchCat(){
+    let tasks = document.getElementsByClassName('element')
+
+    for (let task of tasks){
+        let cats = task.getElementsByClassName('catDiv')
+        let cate = cats[0]
+
+        if (cate.innerText.includes(cat2.value) == false){
+            task.style.display = 'none'
+        }
+    }
+}
+bSearch.addEventListener('click', searchCat)
+
+function resetTasks(){
+    let tasks = document.getElementsByClassName('element')
+    for (let task of tasks){
+        task.style.display = 'block'
+    }
+}
+bReset.addEventListener('click', resetTasks)
 
 
 

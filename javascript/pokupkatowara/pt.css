@@ -27,24 +27,25 @@
     font-size: 30px;
 }
 
+.buttons {
+    margin-top: 80px;
+    display: flex;
+}
+
 .b{
-    position: absolute;
-    margin-left: -380px;
-    margin-top: 250px;
     height: 40px;
     width: 200px;
     font-size: 20px;
     font-family: 'Calibri Light';
+    margin-left: 60px;
 }
 
 .b3{
-    position: absolute;
-    margin-left: 330px;
-    margin-top: 130px;
     height: 40px;
     width: 200px;
     font-size: 20px;
     font-family: 'Calibri Light';
+    margin-left: 60px;
 }
 
 .t3{
@@ -126,8 +127,34 @@
     font-family: 'Calibri Light';
     margin-left: 50px;
     font-size: 20px;
+
 }
 
 .searchI{
     margin-left: 50px;
+}
+
+.search-form {
+    margin-top: 25px;
+}
+
+.select{
+    font-size: 20px;
+    font-family: 'Calibri Light';
+    margin-left: 50px;
+    width: 410px;
+}
+
+.t9{
+    font-size: 20px;
+    font-family: 'Calibri Light';
+    margin-left: 50px;
+}
+
+.select2{
+    font-size: 20px;
+    font-family: 'Calibri Light';
+    margin-left: 50px;
+    width: 410px;
+    margin-top: 10px;
 }
