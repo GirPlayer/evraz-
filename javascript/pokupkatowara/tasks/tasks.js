@@ -69,3 +69,57 @@ function resetTasks(){
     }
 }
 bReset.addEventListener('click', resetTasks)
+
+let tasksList = document.getElementById('list');
+let tasks = []
+
+async function getTasks() {
+    //Получение пользователей
+    //Дожидаемся ответов
+    let response = await axios.get('https://jsonplaceholder.typicode.com/posts')
+    tasks = response.data
+    showUsers()
+}
+function showUsers(){
+    tasksList.innerHTML = ''
+    for (let t of tasks){
+
+        let task = document.createElement('div')
+        let taskTitle = document.createElement('div')
+        let taskDescription = document.createElement('div')
+        let buttonD = document.createElement('button')
+        let number = document.createElement('div')
+
+        function Delet() {
+            task.remove()
+            count = count-1
+        }
+        buttonD.addEventListener('click', Delet)
+
+
+
+
+
+        taskTitle.innerHTML = `<b>Название:</b> ${ t.title}`
+        taskDescription.innerHTML = `<b>Описание:</b> ${ t.body}`
+        buttonD.innerHTML = 'Удалить'
+
+        count = count + 1
+        number.innerHTML = `<b>Задача №${count}</b>`
+
+
+        task.classList.add('task')
+        taskTitle.classList.add('task-title')
+        taskDescription.classList.add('task-description')
+
+        task.append(number ,taskTitle, taskDescription, buttonD)
+
+        list.append(task)
+    }
+}
+
+
+function giveSchowUsers(){
+    getTasks()
+}
+giveSchowUsers()
