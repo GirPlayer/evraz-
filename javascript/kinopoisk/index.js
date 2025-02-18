@@ -39,6 +39,11 @@ function showFilm(){
         filmImg.innerHTML = `<img class="movie__cover" src="${item.posterUrl}" alt="">`
         films.append(filmImg, filmTitle, filmRating)
         movies.append(films)
+
+        function newPage(){
+            window.open(`movie.html?id=${ item.kinopoiskId}`)
+        }
+        films.addEventListener("click", newPage)
     }
 }
 

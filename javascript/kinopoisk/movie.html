@@ -99,9 +99,45 @@
       <a
               href="https://www.kinopoisk.ru/series/404900/"
               class="movie__button"
+              id="ssilka"
       >
         Смотреть
       </a>
+    </div>
+  </div>
+
+  <div class="comment-form">
+    <h2 class="comment-form__title">Оставьте комментарий</h2>
+    <div class="comment-form__item">
+      <label for="author" class="comment-form__label">Ваше имя</label>
+      <input type="text" id="author" class="comment-form__author" required>
+    </div>
+    <div class="comment-form__item">
+      <label for="text" class="comment-form__label">Ваш комментарий</label>
+      <textarea id="text" class="comment-form__text" rows="5" required></textarea>
+    </div>
+    <button id="bComment" type="submit" class="comment-form__button movie__button">Отправить</button>
+  </div>
+
+  <div class="comments-list">
+    <h2 class="comments-list__title">Комментарии</h2>
+    <div class="comments-list__items" id="items">
+      <div class="comments-list__item">
+        <div class="comments-list__text">
+          Во все тяжкие - это однозначно один из лучших сериалов созданных людьми. В нем нет минусов, зато есть огромное количество плюсов и думаю не существует человека, которому не понравится этот проект!
+        </div>
+        <div class="comments-list__author">
+          Елисей
+        </div>
+      </div>
+      <div class="comments-list__item">
+        <div class="comments-list__text">
+          Очень интересный и захватывающий сериал, который остается таким же душещипательным и проницательным, с первой - до самой последней секунды сериала.
+        </div>
+        <div class="comments-list__author">
+          Михаил
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -110,3 +146,4 @@
 <script src="movie.js"></script>
 </body>
 </html>
+</div>

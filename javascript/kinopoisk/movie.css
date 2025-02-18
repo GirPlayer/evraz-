@@ -69,3 +69,55 @@ body {
     border-radius: 1000px;
     background: linear-gradient(135deg,#f50 69.93%,#d6bb00);
 }
+
+.comment-form {
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+
+.comment-form__title {
+    margin-bottom: 20px;
+}
+
+.comment-form__item {
+    margin-bottom: 15px;
+}
+
+.comment-form__item label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.comment-form__author,
+.comment-form__text {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #000000;
+}
+
+.comment-form__author {
+    margin-bottom: 12px;
+}
+
+.comment-form__text {
+    resize: vertical;
+}
+
+.comments-list__title {
+    margin-bottom: 20px;
+}
+
+.comments-list__item {
+    margin-bottom: 20px;
+}
+
+.comments-list__text {
+    margin-bottom: 4px;
+}
+
+.comments-list__author {
+    font-weight: bold;
+}

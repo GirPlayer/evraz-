@@ -10,6 +10,9 @@ let zhanr = document.getElementById("zhanr");
 let time = document.getElementById("time");
 let reyting1 = document.getElementById("reyting1");
 let reyting2 = document.getElementById("reyting2");
+let ssilka = document.getElementById("ssilka");
+
+let bComment = document.getElementById('bComment');
 
 async function getMovie() {
     // Получаем список параметров из адреса страницы в браузере - window.location.search
@@ -35,24 +38,37 @@ async function getMovie() {
         let mCountries = ''
         let mGenres = ''
         for(let mCountry of movie.countries){
-            console.log(mCountry)
             mCountries += mCountry.country +' '
         }
         for(let mGenre of movie.genres){
-            console.log(mGenre)
             mGenres += mGenre.genre +' '
         }
 
-        img.innerHTML = movie.posterUrlPreview
+        img.src = movie.posterUrlPreview
         title.innerHTML = movie.nameRu
         description.innerHTML = movie.description
         year.innerHTML = movie.year
         country.innerHTML = mCountries
         zhanr.innerHTML = mGenres
-        time.innerHTML = movie.filmLength
-        reyting1.innerHTML = movie.ratingImdb
+        time.innerHTML = movie.filmLength ? movie.filmLength + ' мин' : 'Не указано'
+        reyting1.innerHTML = movie.ratingImdb || 'Не указано'
         reyting2.innerHTML =  movie.ratingKinopoisk
+        ssilka.href = movie.webUrl
     }
 }
 
 getMovie();
+
+function Comment(){
+    let nameC = document.getElementById("author");
+    let comC = document.getElementById('text')
+    let coments = document.getElementById('items')
+    newComment = [
+        {
+            text: comC,
+            name: nameC,
+        }
+    ]
+    coments.innerHTML = comments + newComent
+}
+bComment.addEventListener('click', Comment)
