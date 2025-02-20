@@ -16,7 +16,6 @@ async function getFilm(){
         }
     })
     items = response.data.items
-    console.log(response.data)
     showFilm()
 }
 getFilm()

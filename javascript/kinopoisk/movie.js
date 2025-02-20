@@ -1,4 +1,4 @@
-const API_KEY = "4d5b1014-2ce3-49d6-b2ac-e47e01ed4533";
+const API_KEY = "be02d04a-425d-4587-8b3e-5a62452855cd";
 let movie = null;
 
 let img = document.getElementById("img");
@@ -56,19 +56,68 @@ async function getMovie() {
         ssilka.href = movie.webUrl
     }
 }
-
 getMovie();
+
+async function getSimilarMovies() {
+    const params = new URLSearchParams(window.location.search);
+    const filmId = params.get('id');
+    const response = await axios.get(`https://kinopoiskapiunofficial.tech/api/v2.2/films/${ filmId }/similars`, {
+        headers: {
+            "Content-Type": 'application/json',
+            "X-API-KEY": API_KEY,
+        },
+    });
+
+    similar_movies = response.data.items;
+    showSimilarMovies()
+}
+
+function showSimilarMovies(){
+    let SIMmovies = document.getElementById('movies')
+    for (let movie of similar_movies) {
+        let movieCard = document.createElement('div')
+        let movieTitle = document.createElement('div')
+        let movieImg = document.createElement('div')
+
+        movieCard.classList.add('movie-card')
+        movieTitle.classList.add('movie-card__title')
+        movieImg.classList.add('movie-card__cover')
+
+        movieTitle.innerHTML = `<b>${movie.nameRu}</b>`
+        movieImg.innerHTML = `<img class="movie-card__cover" src="${movie.posterUrl}" alt="">`
+        movieCard.append(movieImg, movieTitle)
+        movies.append(movieCard)
+
+        function newPage(){
+            window.open(`movie.html?id=${ movie.filmId}`)
+        }
+        movieCard.addEventListener("click", newPage)
+        SIMmovies.append(movieCard)
+    }
+}
+
+getSimilarMovies()
 
 function Comment(){
     let nameC = document.getElementById("author");
     let comC = document.getElementById('text')
     let coments = document.getElementById('items')
-    newComment = [
-        {
-            text: comC,
-            name: nameC,
-        }
-    ]
-    coments.innerHTML = comments + newComent
+    let comment = document.createElement('div')
+    let Cauthor = document.createElement('div')
+    let Ctext = document.createElement('div')
+
+    comment.classList.add('comments-list__item')
+    Cauthor.classList.add('comments-list__author')
+    Ctext.classList.add('comments-list__text')
+
+    Cauthor.innerHTML = nameC.value
+    Ctext.innerHTML = comC.value
+
+    comment.append(Ctext, Cauthor)
+
+    coments.prepend(comment)
+
+    nameC.value = ""
+    comC.value = ""
 }
 bComment.addEventListener('click', Comment)
