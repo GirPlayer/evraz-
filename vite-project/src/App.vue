@@ -1,14 +1,16 @@
 <script setup>
 import { ref } from 'vue'
+import axios from 'axios'
 
 let API_KEY = 'ba0235c4d6ba3983024e60f0b3143eddf61513a8'
 //создание переменной реф
 let search = ref("")
+let companies = ref([])
 
 async function getCompanies(){
-  let url = 'http://suggestions.dadata.ru/suggestions/api/4_1/rs/findById/party'
-  let dara = {
-    query: 'Сбербанк'
+  let url = 'https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/party'
+  let data = {
+    query: search.value
   }
   let options = {
     headers: {
@@ -17,8 +19,8 @@ async function getCompanies(){
       "Authorization":  'Token ' +  API_KEY,
     }
   }
-  let response = await axios.get('Название сайта')
-  console.log(search.value)
+  let response = await axios.post(url, data, options )
+  companies.value = response.data.suggestions
 }
 </script>
 
@@ -34,6 +36,7 @@ async function getCompanies(){
           v-model="search"
           placeholder="Напишите название организации"
           class="search-input"
+          @keyup.enter="getCompanies"
       >
       <button
           @click="getCompanies"
@@ -43,11 +46,38 @@ async function getCompanies(){
       </button>
     </div>
 
-<!--    {{search}}-->
 
     <div class="companies-list">
       <div class="companies-title">
-        Найденые организации
+        Найденые организации:
+      </div>
+
+      <div
+          v-if="companies.length > 0"
+          class="companies"
+      >
+        <div
+            v-for="(company, index) in companies"
+            :class="{
+              'active-company': company.data.state.status == 'ACTIVE',
+              'inactive-company': company.data.state.status == 'LIQUIDATED'
+            }"
+            class="company"
+        >
+          <div class="company-name">
+            {{index+1}}. {{company.value}}
+          </div>
+          <div class="company-inn">
+            ИНН: {{company.data.inn}}
+          </div>
+          <div class="company-adress">
+            Адрес: {{company.data.address.value}}
+          </div>
+        </div>
+      </div>
+
+      <div v-else>
+        Пусто :( Напишите название организации в текстовое поле и нажмите 'найти'
       </div>
     </div>
   </div>
@@ -55,16 +85,10 @@ async function getCompanies(){
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.active-company{
+  background-color: #b7ff90;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+.inactive-company {
+  background-color: #ff8e8e;
 }
 </style>
