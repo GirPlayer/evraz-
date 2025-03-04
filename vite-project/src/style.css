@@ -12,6 +12,15 @@ body {
   overflow:         hidden;
 }
 
+button {
+  height:           50px;
+  background-color: black;
+  color:            white;
+  border-radius:    12px;
+  border:           none;
+  cursor:           pointer;
+}
+
 .app {
   display:         flex;
   align-items:     center;
@@ -52,13 +61,7 @@ body {
 }
 
 .search-button {
-  width:            100px;
-  height:           50px;
-  background-color: black;
-  color:            white;
-  border-radius:    12px;
-  border:           none;
-  cursor:           pointer;
+  width: 100px;
 }
 
 .companies-list {
@@ -72,8 +75,9 @@ body {
 }
 
 .company {
-  padding:       8px 0;
+  padding:       8px;
   border-bottom: 1px solid #f1f1f1;
+  cursor:        pointer;
 }
 
 .company-name {
@@ -82,4 +86,40 @@ body {
 
 .company:last-child {
   border-bottom: none;
+}
+
+.company-button {
+  width: 100%;
+  font-size: 16px;
+}
+
+.company-card__title, .company-card__property {
+  margin-bottom: 8px;
+}
+
+.company-card__status {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.company-card__status.active {
+  color: green;
+}
+
+.company-card__status.inactive {
+  color: red;
+}
+
+.company-card__button {
+  width:      100%;
+  font-size:  16px;
+  margin-top: 8px;
+}
+
+.mode-fade-enter-active, .mode-fade-leave-active {
+  transition: opacity .3s ease;
+}
+
+.mode-fade-enter-from, .mode-fade-leave-to {
+  opacity: 0
 }
