@@ -29,26 +29,33 @@ function addTasks(){
 }
 
 function DeletAll(){
-  tasks.value = ''
+  let confAll = confirm('Точно хотите их удалить?')
+  if (confAll === true){
+    tasks.value = []
+  }
 }
 
 function DeletCom() {
+  let confCom = confirm('Точно хотите их удалить?')
   let ComTasks = []
-  for (let task of tasks.value){
-    if (task.completed === false){
-      ComTasks.push(task)
+  if (confCom === true){
+    for (let task of tasks.value){
+      if (task.completed === false){
+        ComTasks.push(task)
+      }
     }
+    tasks.value = ComTasks
   }
-  tasks.value = ComTasks
 }
 
 function DeletOne(index){
-  tasks.value.splice(index,1)
+  let conf = confirm("Точно хотите удалить?")
+  if (conf === true){
+    tasks.value.splice(index,1)
+  }
 }
 
-function AddP(){
 
-}
 </script>
 
 
@@ -65,8 +72,7 @@ function AddP(){
           v-for="(task, index) in tasks"
           :class="{ 'completed': task.completed === true}"
           @click="task.completed = true"
-        > <img class="img2" src="https://cdn-icons-png.flaticon.com/512/32/32463.png">
-          <img class="img3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS93K_Q4pO7pLfvSuIqCRma31DVZXrvX2YnAA&s">
+        > <img class="img2" :src="task.completed === false ? 'https://cdn-icons-png.flaticon.com/512/32/32463.png' : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS93K_Q4pO7pLfvSuIqCRma31DVZXrvX2YnAA&s'">
           {{ task.name}}
           <button @click.stop="DeletOne(index)">
           <img class="img" src="https://cdn-icons-png.flaticon.com/512/114/114553.png">
